@@ -1,8 +1,8 @@
 ---
 
-date = '2025-02-10T07:05:00+08:00'
-draft = false
-title = '克里普克_DeepSeek-R1'
+date: '2025-02-10T07:05:00+08:00'
+draft: false
+title: '克里普克_DeepSeek-R1'
 
 ---
 
