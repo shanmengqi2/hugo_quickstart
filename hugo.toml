@@ -1,6 +1,6 @@
 baseURL = 'https://shanmengqi2.github.io/hugo_quickstart/'
 languageCode = 'en-us'
-title = 'Yumeki\'s Hugo'
+title = "Yumeki's Hugo"
 theme = 'ananke'
 
 [params]
