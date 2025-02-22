@@ -1,4 +1,7 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://shanmengqi2.github.io/hugo_quickstart/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Yumeki's Hugo'
 theme = 'ananke'
+
+[params]
+  images = ["default.jpg"]
