@@ -5,3 +5,8 @@ theme = 'ananke'
 
 [params]
   images = ["default.jpg"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许原始 HTML

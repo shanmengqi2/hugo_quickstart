@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/hugo_quickstart/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=hugo_quickstart/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>C语言main函数传参与指针操作 | Yumeki&#39;s Hugo</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Assignment name  : aff_a
+Expected files   : aff_a.c
+Allowed functions: write
+Write a program that takes a string, and displays the first &lsquo;a&rsquo; character it
+encounters in it, followed by a newline. If there are no &lsquo;a&rsquo; characters in the
+string, the program just writes a newline. If the number of parameters is not
+1, the program displays &lsquo;a&rsquo; followed by a newline.
+#include &lt;unistd.h&gt;
+
+int		main(int argc, char **argv)
+{
+	if (argc != 2)
+		write(1, &#34;a&#34;, 1);
+	else
+	{
+		while (*argv[1])
+		{
+			if (*argv[1] == &#39;a&#39;)
+			{
+				write(1, &#34;a&#34;, 1);
+				break;
+			}
+			argv[1]&#43;&#43;;
+		}
+	}
+	write(1, &#34;\n&#34;, 1);
+	return (0);
+}
+int argc 和 char **argv 是 main 函数的命令行参数。">
+    <meta name="generator" content="Hugo 0.142.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/hugo_quickstart/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/hugo_quickstart/posts/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80main%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/hugo_quickstart/posts/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80main%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C/">
+  <meta property="og:site_name" content="Yumeki&#39;s Hugo">
+  <meta property="og:title" content="C语言main函数传参与指针操作">
+  <meta property="og:description" content="Assignment name : aff_a Expected files : aff_a.c
+Allowed functions: write Write a program that takes a string, and displays the first ‘a’ character it encounters in it, followed by a newline. If there are no ‘a’ characters in the string, the program just writes a newline. If the number of parameters is not 1, the program displays ‘a’ followed by a newline.
+#include &lt;unistd.h&gt; int	main(int argc, char **argv) { if (argc != 2) write(1, &#34;a&#34;, 1); else { while (*argv[1]) { if (*argv[1] == &#39;a&#39;) { write(1, &#34;a&#34;, 1); break; } argv[1]&#43;&#43;; } } write(1, &#34;\n&#34;, 1); return (0); } int argc 和 char **argv 是 main 函数的命令行参数。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-22T17:51:00+08:00">
+    <meta property="article:modified_time" content="2025-02-22T17:51:00+08:00">
+    <meta property="og:image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+
+  <meta itemprop="name" content="C语言main函数传参与指针操作">
+  <meta itemprop="description" content="Assignment name : aff_a Expected files : aff_a.c
+Allowed functions: write Write a program that takes a string, and displays the first ‘a’ character it encounters in it, followed by a newline. If there are no ‘a’ characters in the string, the program just writes a newline. If the number of parameters is not 1, the program displays ‘a’ followed by a newline.
+#include &lt;unistd.h&gt; int	main(int argc, char **argv) { if (argc != 2) write(1, &#34;a&#34;, 1); else { while (*argv[1]) { if (*argv[1] == &#39;a&#39;) { write(1, &#34;a&#34;, 1); break; } argv[1]&#43;&#43;; } } write(1, &#34;\n&#34;, 1); return (0); } int argc 和 char **argv 是 main 函数的命令行参数。">
+  <meta itemprop="datePublished" content="2025-02-22T17:51:00+08:00">
+  <meta itemprop="dateModified" content="2025-02-22T17:51:00+08:00">
+  <meta itemprop="wordCount" content="165">
+  <meta itemprop="image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+  <meta name="twitter:title" content="C语言main函数传参与指针操作">
+  <meta name="twitter:description" content="Assignment name : aff_a Expected files : aff_a.c
+Allowed functions: write Write a program that takes a string, and displays the first ‘a’ character it encounters in it, followed by a newline. If there are no ‘a’ characters in the string, the program just writes a newline. If the number of parameters is not 1, the program displays ‘a’ followed by a newline.
+#include &lt;unistd.h&gt; int	main(int argc, char **argv) { if (argc != 2) write(1, &#34;a&#34;, 1); else { while (*argv[1]) { if (*argv[1] == &#39;a&#39;) { write(1, &#34;a&#34;, 1); break; } argv[1]&#43;&#43;; } } write(1, &#34;\n&#34;, 1); return (0); } int argc 和 char **argv 是 main 函数的命令行参数。">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/hugo_quickstart/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yumeki&#39;s Hugo
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">C语言main函数传参与指针操作</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-02-22T17:51:00+08:00">February 22, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Assignment name  : aff_a
+Expected files   : aff_a.c</p>
+<h2 id="allowed-functions-write">Allowed functions: write</h2>
+<p>Write a program that takes a string, and displays the first &lsquo;a&rsquo; character it
+encounters in it, followed by a newline. If there are no &lsquo;a&rsquo; characters in the
+string, the program just writes a newline. If the number of parameters is not
+1, the program displays &lsquo;a&rsquo; followed by a newline.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span>		<span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">write</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (<span style="color:#f92672">*</span>argv[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>argv[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>			{
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">write</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			argv[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">write</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>int argc 和 char **argv 是 main 函数的命令行参数。</code></p>
+<p><code>int argc (argument count):</code>
+<code>表示程序运行时传入的参数个数</code>
+<code>包括程序名称本身</code>
+<code>程序名称算作第一个参数，所以 argc 最小值是 1</code>
+<code>char **argv (argument vector):</code>
+<code>是一个指向字符串数组的指针</code>
+<code>存储所有的命令行参数</code>
+<code>argv[0] 是程序名称</code>
+<code>argv[1] 是第一个参数</code>
+<code>argv[2] 是第二个参数，以此类推</code>
+<code>argv[argc] 是 NULL</code>
+<code>char **argv，假设我们传入的参数为hello</code>
+<code>argv指向一个指针数组，也就是数组里面的元素都是指针。（这个例子里就是字符串指针，分别指向程序名和hello）</code>
+<code>argv里的每一项，也就是argv[i],就是指向具体字符串的指针,比如argv[1]就指向了hello</code></p>
+<p><code>对于argv[1]来说，既然它是一个指向字符串的指针，那么*argv[1],它的初始值就是‘h’,。</code>
+<code>此时，如果移动argv[1]的指针，也就是argv[1]++，那么指针就移动到了e的位置，值就是‘e’</code></p>
+<p><code>如果用你上面的二维数组来解释，也可以。那既然argv[1]是指向这个字符串，那么显然，argv[1][0]，就是字符串里的第一个字符，也即是*argv[1]，两者一样。一个是指针解释，一个是数组解释。</code></p>
+<p>理解到这里我觉得就行了，我再做一些测试。</p>
+<p><img src="./image1.png" alt="">
+argv[i]，其实也能用*argv来表示（注意，后面没有中括号）；只不过，因为我们只需要argv[1]，因此就没有必要去挨个移动大指针，而是直接去取argv[1]就可以了。可以看我的代码。</p>
+<p><code>argv++之后，*argv = argv[1] = 传入的字符串hello</code>
+<code>而*argv1，自然就是字符h，argv[1]++，*argv1就是字符e。</code>
+<code>换言之，argv++之后</code>
+<code>既然*argv=argv[1]=hello，那么**argv = argv[1] = h</code>
+<code>就是这样两层关系。</code></p>
+<p><code>并且我自己手写了一个函数，用str来做参数，还原了一样的效果。</code>
+<code>实际上，int test2(char str)，其实，就表示str是个二维数组</code>
+<code>第一维度移动指针，就是在不同的字符串上移动；</code>
+<code>第二维度移动指针，就是在某个字符串上的字符上移动。</code>
+<code>第一维度的指针具有优先性，当你大指针移动到数组的第二个元素时，那么此时的小指针，也必须移动到第二个字符串上。</code>
+<code>换言之，str[0][0]，表示第一个字符串的第二个字符，如果你移动大指针，变成str[1][0]，那此时小指针只能'跟着它动，取到第二个字符串[0]。</code></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/hugo_quickstart/" >
+    &copy;  Yumeki's Hugo 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
