@@ -10,3 +10,9 @@ theme = 'ananke'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true  # 允许原始 HTML
+
+# theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+
+[module]
+  [[module.imports]]
+    path = 'github.com/theNewDynamic/gohugo-theme-ananke'
