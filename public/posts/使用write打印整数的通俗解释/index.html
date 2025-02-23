@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/hugo_quickstart/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=hugo_quickstart/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>write()打印整数的通俗解释 | Yumeki&#39;s Hugo</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="直接上代码：
+void ft_putnbr(int n)
+{
+    char digit;
+    
+    if (n &gt;= 10)
+        ft_putnbr(n / 10);
+    digit = n % 10 &#43; &#39;0&#39;;
+    write(1, &amp;digit, 1);
+}
+这个可以实现用write来打整型数字。
+用到两个原理：
+1，0-9的整数&#43;字符，得到的结果是整数&#43;字符对应的ascii码，两者之和的ASCII码对应的字符。
+比如说，‘0’的ASCII码是48，那如果待转换数字是5。我用5&#43;&lsquo;0&rsquo;，得到的就是53，53是0的ascii码48的后五位，自然就是字符‘5’。
+总结一下，如果n=5，那么char c = n &#43; &lsquo;0&rsquo;，c就是‘5’，easy peasy, right？
+以下算法涉及递归
+2，对于大于9的数字，我们必须把每一位拆出来。比如拆最高位，就必须不停的 / 10，去把它变成个位数。比如253，/10，变成25，再/10，变成2，就得到最高位；那怎么拿到第二位呢，那只要%10，253 % 10 = 53，这就拿到了53，再以此类推拿5。如果直接写，循环会变的非常麻烦。这个时候递归算法就可以很简单的解决问题。
+在上面这个函数当中，如果n&gt;=10，那就把n/10，作为参数再调用它自身，直到n&lt;10，我们就得到了首位；首位 % 10，还是它自己，所以&#43;&lsquo;0&rsquo;，就打印出了第一个字符。然后函数执行就会回到上一层的调用。比如还是253举例，当给到这个函数里之后，/10，调用自身一次，此时参数是25；依然大于十，又调用一次，此时得到2，2 % 10 &#43; ‘0’ = ‘2’，但此时还没执行完呢，函数要回到上一层，上一层是25，那我们要获得5，也即是个位，那也是 25 % 10，得到5，5&#43;‘0’ = ‘5’；最后回到最外层，就是251本身，此时我们还剩1没有打，依然只要 251 % 10 &#43; ‘0’ = ‘1’，这样就按顺序完成了打印。">
+    <meta name="generator" content="Hugo 0.142.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/hugo_quickstart/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/hugo_quickstart/posts/%E4%BD%BF%E7%94%A8write%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E7%9A%84%E9%80%9A%E4%BF%97%E8%A7%A3%E9%87%8A/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/hugo_quickstart/posts/%E4%BD%BF%E7%94%A8write%E6%89%93%E5%8D%B0%E6%95%B4%E6%95%B0%E7%9A%84%E9%80%9A%E4%BF%97%E8%A7%A3%E9%87%8A/">
+  <meta property="og:site_name" content="Yumeki&#39;s Hugo">
+  <meta property="og:title" content="write()打印整数的通俗解释">
+  <meta property="og:description" content="直接上代码：
+void ft_putnbr(int n) { char digit; if (n &gt;= 10) ft_putnbr(n / 10); digit = n % 10 &#43; &#39;0&#39;; write(1, &amp;digit, 1); } 这个可以实现用write来打整型数字。
+用到两个原理： 1，0-9的整数&#43;字符，得到的结果是整数&#43;字符对应的ascii码，两者之和的ASCII码对应的字符。 比如说，‘0’的ASCII码是48，那如果待转换数字是5。我用5&#43;‘0’，得到的就是53，53是0的ascii码48的后五位，自然就是字符‘5’。 总结一下，如果n=5，那么char c = n &#43; ‘0’，c就是‘5’，easy peasy, right？
+以下算法涉及递归
+2，对于大于9的数字，我们必须把每一位拆出来。比如拆最高位，就必须不停的 / 10，去把它变成个位数。比如253，/10，变成25，再/10，变成2，就得到最高位；那怎么拿到第二位呢，那只要%10，253 % 10 = 53，这就拿到了53，再以此类推拿5。如果直接写，循环会变的非常麻烦。这个时候递归算法就可以很简单的解决问题。
+在上面这个函数当中，如果n&gt;=10，那就把n/10，作为参数再调用它自身，直到n&lt;10，我们就得到了首位；首位 % 10，还是它自己，所以&#43;‘0’，就打印出了第一个字符。然后函数执行就会回到上一层的调用。比如还是253举例，当给到这个函数里之后，/10，调用自身一次，此时参数是25；依然大于十，又调用一次，此时得到2，2 % 10 &#43; ‘0’ = ‘2’，但此时还没执行完呢，函数要回到上一层，上一层是25，那我们要获得5，也即是个位，那也是 25 % 10，得到5，5&#43;‘0’ = ‘5’；最后回到最外层，就是251本身，此时我们还剩1没有打，依然只要 251 % 10 &#43; ‘0’ = ‘1’，这样就按顺序完成了打印。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-23T19:05:00+08:00">
+    <meta property="article:modified_time" content="2025-02-23T19:05:00+08:00">
+    <meta property="og:image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+
+  <meta itemprop="name" content="write()打印整数的通俗解释">
+  <meta itemprop="description" content="直接上代码：
+void ft_putnbr(int n) { char digit; if (n &gt;= 10) ft_putnbr(n / 10); digit = n % 10 &#43; &#39;0&#39;; write(1, &amp;digit, 1); } 这个可以实现用write来打整型数字。
+用到两个原理： 1，0-9的整数&#43;字符，得到的结果是整数&#43;字符对应的ascii码，两者之和的ASCII码对应的字符。 比如说，‘0’的ASCII码是48，那如果待转换数字是5。我用5&#43;‘0’，得到的就是53，53是0的ascii码48的后五位，自然就是字符‘5’。 总结一下，如果n=5，那么char c = n &#43; ‘0’，c就是‘5’，easy peasy, right？
+以下算法涉及递归
+2，对于大于9的数字，我们必须把每一位拆出来。比如拆最高位，就必须不停的 / 10，去把它变成个位数。比如253，/10，变成25，再/10，变成2，就得到最高位；那怎么拿到第二位呢，那只要%10，253 % 10 = 53，这就拿到了53，再以此类推拿5。如果直接写，循环会变的非常麻烦。这个时候递归算法就可以很简单的解决问题。
+在上面这个函数当中，如果n&gt;=10，那就把n/10，作为参数再调用它自身，直到n&lt;10，我们就得到了首位；首位 % 10，还是它自己，所以&#43;‘0’，就打印出了第一个字符。然后函数执行就会回到上一层的调用。比如还是253举例，当给到这个函数里之后，/10，调用自身一次，此时参数是25；依然大于十，又调用一次，此时得到2，2 % 10 &#43; ‘0’ = ‘2’，但此时还没执行完呢，函数要回到上一层，上一层是25，那我们要获得5，也即是个位，那也是 25 % 10，得到5，5&#43;‘0’ = ‘5’；最后回到最外层，就是251本身，此时我们还剩1没有打，依然只要 251 % 10 &#43; ‘0’ = ‘1’，这样就按顺序完成了打印。">
+  <meta itemprop="datePublished" content="2025-02-23T19:05:00+08:00">
+  <meta itemprop="dateModified" content="2025-02-23T19:05:00+08:00">
+  <meta itemprop="wordCount" content="66">
+  <meta itemprop="image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+  <meta name="twitter:title" content="write()打印整数的通俗解释">
+  <meta name="twitter:description" content="直接上代码：
+void ft_putnbr(int n) { char digit; if (n &gt;= 10) ft_putnbr(n / 10); digit = n % 10 &#43; &#39;0&#39;; write(1, &amp;digit, 1); } 这个可以实现用write来打整型数字。
+用到两个原理： 1，0-9的整数&#43;字符，得到的结果是整数&#43;字符对应的ascii码，两者之和的ASCII码对应的字符。 比如说，‘0’的ASCII码是48，那如果待转换数字是5。我用5&#43;‘0’，得到的就是53，53是0的ascii码48的后五位，自然就是字符‘5’。 总结一下，如果n=5，那么char c = n &#43; ‘0’，c就是‘5’，easy peasy, right？
+以下算法涉及递归
+2，对于大于9的数字，我们必须把每一位拆出来。比如拆最高位，就必须不停的 / 10，去把它变成个位数。比如253，/10，变成25，再/10，变成2，就得到最高位；那怎么拿到第二位呢，那只要%10，253 % 10 = 53，这就拿到了53，再以此类推拿5。如果直接写，循环会变的非常麻烦。这个时候递归算法就可以很简单的解决问题。
+在上面这个函数当中，如果n&gt;=10，那就把n/10，作为参数再调用它自身，直到n&lt;10，我们就得到了首位；首位 % 10，还是它自己，所以&#43;‘0’，就打印出了第一个字符。然后函数执行就会回到上一层的调用。比如还是253举例，当给到这个函数里之后，/10，调用自身一次，此时参数是25；依然大于十，又调用一次，此时得到2，2 % 10 &#43; ‘0’ = ‘2’，但此时还没执行完呢，函数要回到上一层，上一层是25，那我们要获得5，也即是个位，那也是 25 % 10，得到5，5&#43;‘0’ = ‘5’；最后回到最外层，就是251本身，此时我们还剩1没有打，依然只要 251 % 10 &#43; ‘0’ = ‘1’，这样就按顺序完成了打印。">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/hugo_quickstart/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yumeki&#39;s Hugo
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">write()打印整数的通俗解释</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-02-23T19:05:00+08:00">February 23, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>直接上代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ft_putnbr</span>(<span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> digit;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ft_putnbr</span>(n <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>    digit <span style="color:#f92672">=</span> n <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">write</span>(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>digit, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这个可以实现用write来打整型数字。</p>
+<p>用到两个原理：
+1，0-9的整数+字符，得到的结果是整数+字符对应的ascii码，两者之和的ASCII码对应的字符。
+比如说，‘0’的ASCII码是48，那如果待转换数字是5。我用5+&lsquo;0&rsquo;，得到的就是53，53是0的ascii码48的后五位，自然就是字符‘5’。
+总结一下，如果n=5，那么char c = n + &lsquo;0&rsquo;，c就是‘5’，easy peasy, right？</p>
+<p><strong>以下算法涉及递归</strong></p>
+<p>2，对于大于9的数字，我们必须把每一位拆出来。比如拆最高位，就必须不停的 / 10，去把它变成个位数。比如253，/10，变成25，再/10，变成2，就得到最高位；那怎么拿到第二位呢，那只要%10，253 % 10 = 53，这就拿到了53，再以此类推拿5。如果直接写，循环会变的非常麻烦。这个时候递归算法就可以很简单的解决问题。</p>
+<p>在上面这个函数当中，如果n&gt;=10，那就把n/10，作为参数再调用它自身，直到n&lt;10，我们就得到了首位；首位 % 10，还是它自己，所以+&lsquo;0&rsquo;，就打印出了第一个字符。然后函数执行就会回到上一层的调用。比如还是253举例，当给到这个函数里之后，/10，调用自身一次，此时参数是25；依然大于十，又调用一次，此时得到2，2 % 10 + ‘0’ = ‘2’，但此时还没执行完呢，函数要回到上一层，上一层是25，那我们要获得5，也即是个位，那也是 25 % 10，得到5，5+‘0’ = ‘5’；最后回到最外层，就是251本身，此时我们还剩1没有打，依然只要 251 % 10 + ‘0’ = ‘1’，这样就按顺序完成了打印。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/hugo_quickstart/" >
+    &copy;  Yumeki's Hugo 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
