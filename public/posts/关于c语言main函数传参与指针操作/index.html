@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/hugo_quickstart/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=hugo_quickstart/livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -44,7 +44,7 @@ int argc 和 char **argv 是 main 函数的命令行参数。">
     
 
     
-<link rel="stylesheet" href="/hugo_quickstart/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
 
 
@@ -59,10 +59,10 @@ int argc 和 char **argv 是 main 函数的命令行参数。">
     
 
     
-      <link rel="canonical" href="http://localhost:1313/hugo_quickstart/posts/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80main%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C/">
+      <link rel="canonical" href="http://localhost:1313/posts/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80main%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C/">
     
 
-    <meta property="og:url" content="http://localhost:1313/hugo_quickstart/posts/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80main%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C/">
+    <meta property="og:url" content="http://localhost:1313/posts/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80main%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C/">
   <meta property="og:site_name" content="Yumeki&#39;s Hugo">
   <meta property="og:title" content="C语言main函数传参与指针操作">
   <meta property="og:description" content="Assignment name : aff_a Expected files : aff_a.c
@@ -73,7 +73,6 @@ Allowed functions: write Write a program that takes a string, and displays the f
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-02-22T17:51:00+08:00">
     <meta property="article:modified_time" content="2025-02-22T17:51:00+08:00">
-    <meta property="og:image" content="http://localhost:1313/hugo_quickstart/default.jpg">
 
   <meta itemprop="name" content="C语言main函数传参与指针操作">
   <meta itemprop="description" content="Assignment name : aff_a Expected files : aff_a.c
@@ -82,9 +81,7 @@ Allowed functions: write Write a program that takes a string, and displays the f
   <meta itemprop="datePublished" content="2025-02-22T17:51:00+08:00">
   <meta itemprop="dateModified" content="2025-02-22T17:51:00+08:00">
   <meta itemprop="wordCount" content="165">
-  <meta itemprop="image" content="http://localhost:1313/hugo_quickstart/default.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/hugo_quickstart/default.jpg">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="C语言main函数传参与指针操作">
   <meta name="twitter:description" content="Assignment name : aff_a Expected files : aff_a.c
 Allowed functions: write Write a program that takes a string, and displays the first ‘a’ character it encounters in it, followed by a newline. If there are no ‘a’ characters in the string, the program just writes a newline. If the number of parameters is not 1, the program displays ‘a’ followed by a newline.
@@ -101,7 +98,7 @@ Allowed functions: write Write a program that takes a string, and displays the f
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
-    <a href="/hugo_quickstart/" class="f3 fw2 hover-white no-underline white-90 dib">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
       
         Yumeki&#39;s Hugo
       
@@ -109,6 +106,28 @@ Allowed functions: write Write a program that takes a string, and displays the f
     <div class="flex-l items-center">
       
 
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/dir01/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/dir02/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+        </ul>
       
       <div class="ananke-socials"></div>
 
@@ -123,7 +142,6 @@ Allowed functions: write Write a program that takes a string, and displays the f
 
     <main class="pb7" role="main">
       
-  
   
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
     <header class="mt4 w-100">
@@ -222,7 +240,7 @@ argv[i]，其实也能用*argv来表示（注意，后面没有中括号）；�
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/hugo_quickstart/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
     &copy;  Yumeki's Hugo 2025 
   </a>
     <div><div class="ananke-socials"></div>
