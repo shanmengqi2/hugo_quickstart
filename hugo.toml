@@ -26,5 +26,5 @@ theme = 'ananke'
 
 
 [params]
-  featured_image = "/images/screenshot.png"
+  featured_image = "https://blog.vikin007.xyz/images/screenshot.png"
   description = "Write something, for yourself, for everyone."
