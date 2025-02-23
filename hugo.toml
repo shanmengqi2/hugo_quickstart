@@ -7,6 +7,19 @@ theme = 'ananke'
     [markup.goldmark.renderer]
       unsafe = true  # 允许原始 HTML
 
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/DIR01/"
+    weight = 1
+  [[menu.main]]
+    name = "Articles"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/DIR02/"
+    weight = 3
 
 
 
