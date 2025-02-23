@@ -20,6 +20,11 @@ theme = 'ananke'
     name = "Contact"
     url = "/DIR02/"
     weight = 3
+	
 
 
 
+
+[params]
+  featured_image = "/images/screenshot.png"
+  description = "Write something, for yourself, for everyone."
